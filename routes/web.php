@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('customers.index');
 });
+
+Route::resource('customers', 'CustomerController', ['only' => ['index', 'show', 'store']]);
+Route::get('dashboard', 'CustomerController@dashboard');
